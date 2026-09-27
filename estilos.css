@@ -1,0 +1,295 @@
+
+:root{
+   --degradado_1: linear-gradient(50deg, white, rgb(39, 173, 39));
+   --cajas_texto2:  linear-gradient(700deg, rgb(15, 15, 15), rgba(70, 69, 69, 0.7));
+   --cajas_texto: linear-gradient(700deg, rgba(16, 80, 22, 0.801), rgba(80, 77, 77, 0.7));
+   --no_color: rgba(255, 255, 255, 0);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body{
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset:0;
+    background-image: url(imagenes/fondo\ principal.png);
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+header,
+main,
+footer,
+section,
+.pruebas,
+.redes,
+.gustos,
+.soy {
+    position: relative;
+    z-index: 1;
+}
+
+h1{
+    z-index: 2;
+    background: var(--degradado_1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+h2{
+    background: rgba(248, 247, 247, 0.658);
+    width: auto;
+    max-width: 220px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 0 12px;
+}
+
+h3{
+    position: relative;
+    color: white;
+    width: auto;
+    margin: 0 0 12px;
+}
+
+p{
+    color: white;
+    padding: 5px 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+ol{
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background: var(--degradado_1);
+    padding: 15px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+a:hover {
+    background: var(--cajas_texto);
+    margin: 2px 0 0;
+}
+
+.encabezado{
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.encabezado::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(imagenes/fondo\ de\ encabezado.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px 70px;
+}
+
+section,
+.redes,
+.pruebas {
+    width: 100%;
+    background: var(--cajas_texto2);
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin: 0;
+}
+
+.soy,
+.gustos {
+    min-height: auto;
+}
+
+.gustos .musica,
+.gustos .musica2 {
+    display: inline-block;
+    width: calc(50% - 12px);
+    min-width: 150px;
+    vertical-align: top;
+    margin: 10px 0;
+}
+
+.musica img,
+.musica2 img {
+    width: 100%;
+    max-width: 200px;
+    height: 245px;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+    margin: 0 auto 10px;
+}
+
+.musica audio,
+.musica2 audio {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.terraria,
+.caballero {
+    width: calc(50% - 12px);
+    max-width: 200px;
+    min-width: 120px;
+    height: 245px;
+    object-fit: cover;
+    display: inline-block;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+.redes {
+    background: var(--cajas_texto2);
+    min-height: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 12px;
+}
+
+.ig_logo,
+.tiktok_logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.redes-caja {
+    width: 100%;
+    background: var(--degradado_1);
+    border-radius: 30px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 150px;
+}
+
+.redes-caja-perfil1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px double black;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.redes-caja-texto {
+    color: black;
+    width: 100%;
+    margin: 0;
+}
+
+.pruebas {
+    min-height: 200px;
+}
+
+.footer{
+    position: relative;
+    background: var(--degradado_1);
+    width: 100%;
+    height: 100px;
+    left: 0;
+    top: 0;
+}
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .redes,
+    .pruebas {
+        width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .encabezado {
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 10px 10px 40px;
+    }
+
+    .gustos .musica,
+    .gustos .musica2,
+    .terraria,
+    .caballero {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .musica img,
+    .musica2 img,
+    .terraria,
+    .caballero {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .redes-caja {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .redes-caja-perfil1 {
+        margin: 0 auto;
+    }
+
+    .redes-caja-texto {
+        width: 100%;
+    }
+}
